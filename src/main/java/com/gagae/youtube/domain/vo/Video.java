@@ -1,8 +1,6 @@
-package com.gagae.youtube.domain;
+package com.gagae.youtube.domain.vo;
 
 import lombok.*;
-
-import java.util.Optional;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

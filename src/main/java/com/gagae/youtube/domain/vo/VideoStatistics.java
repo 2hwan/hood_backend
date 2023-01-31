@@ -1,4 +1,4 @@
-package com.gagae.youtube.domain;
+package com.gagae.youtube.domain.vo;
 
 import lombok.*;
 

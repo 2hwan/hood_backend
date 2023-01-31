@@ -1,14 +1,13 @@
-package com.gagae.youtube.adapter.in.web;
+package com.gagae.youtube.framework.adapters.input.rest;
 
 import com.gagae.common.BaseResponse;
 import com.gagae.common.WebAdapter;
-import com.gagae.youtube.application.port.in.GetVideoInfoCommand;
-import com.gagae.youtube.application.port.in.GetVideoInfoUseCase;
-import com.gagae.youtube.domain.Video;
+import com.gagae.youtube.application.ports.input.GetVideoInfoCommand;
+import com.gagae.youtube.application.usecases.GetVideoInfoUseCase;
+import com.gagae.youtube.domain.vo.Video.VideoId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @WebAdapter
@@ -25,7 +24,7 @@ public class YouTubeController {
 
         // command 로 domain 객체 생성
         GetVideoInfoCommand command = new GetVideoInfoCommand(
-                new Video(videoId));
+                new VideoId(videoId));
 //                new AccountId(targetAccountId),
 //                Money.of(amount));
 //

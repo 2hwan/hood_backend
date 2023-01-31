@@ -20,16 +20,16 @@ public class VideoStatistics {
     @Getter
     private final Long commentCount;
 
-    public VideoStatistics(
-            @NonNull Long viewCount,
-            @NonNull Long likeCount,
-            @NonNull Long dislikeCount,
-            @NonNull Long favoriteCount,
-            @NonNull Long commentCount) {
-        this.viewCount = viewCount;
-        this.likeCount = likeCount;
-        this.dislikeCount = dislikeCount;
-        this.favoriteCount = favoriteCount;
-        this.commentCount = commentCount;
-    }
+//    public VideoStatistics(
+//            @NonNull Long viewCount,
+//            @NonNull Long likeCount,
+//            @NonNull Long dislikeCount,
+//            @NonNull Long favoriteCount,
+//            @NonNull Long commentCount) {
+//        this.viewCount = viewCount;
+//        this.likeCount = likeCount;
+//        this.dislikeCount = dislikeCount;
+//        this.favoriteCount = favoriteCount;
+//        this.commentCount = commentCount;
+//    }
 }

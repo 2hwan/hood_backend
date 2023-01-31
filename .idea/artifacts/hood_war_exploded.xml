@@ -61,6 +61,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.16" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.16" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.16" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-validation:2.6.4" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.58" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.2.2.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.6.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.4" />
           <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" />

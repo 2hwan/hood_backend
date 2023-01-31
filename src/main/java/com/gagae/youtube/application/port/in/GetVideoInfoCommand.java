@@ -1,7 +1,7 @@
 package com.gagae.youtube.application.port.in;
 
 import com.gagae.common.SelfValidating;
-import com.gagae.youtube.domain.Video;
+import com.gagae.youtube.domain.Video.VideoId;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
@@ -12,10 +12,11 @@ import javax.validation.constraints.NotNull;
 public class GetVideoInfoCommand extends SelfValidating<GetVideoInfoCommand> {
 
     @NotNull
-    private final Video video;
+    private final VideoId videoId;
 
-    public GetVideoInfoCommand(Video video) {
-        this.video = video;
+    //생성자, video id
+    public GetVideoInfoCommand(VideoId videoId) {
+        this.videoId = videoId;
         this.validateSelf();
     }
 }

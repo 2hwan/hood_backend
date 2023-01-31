@@ -1,9 +1,8 @@
 package com.gagae.youtube.domain;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Value;
+import lombok.*;
+
+import java.util.Optional;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -13,6 +12,13 @@ public class Video {
 
     @Getter
     private final VideoStatistics statistics;
+
+    @Getter
+    private final VideoSnippet snippet;
+
+//    public Optional<Long> getId(){
+//        return Optional.ofNullable(this.id);
+//    }
 
     @Value
     public static class VideoId {

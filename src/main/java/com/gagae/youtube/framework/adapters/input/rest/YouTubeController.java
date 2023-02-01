@@ -4,7 +4,7 @@ import com.gagae.common.BaseResponse;
 import com.gagae.common.WebAdapter;
 import com.gagae.youtube.application.ports.input.GetVideoInfoCommand;
 import com.gagae.youtube.application.usecases.GetVideoInfoUseCase;
-import com.gagae.youtube.domain.vo.Video.VideoId;
+import com.gagae.youtube.domain.vo.VideoId.VideoId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,7 @@
 package com.gagae.youtube.application.ports.input;
 
 import com.gagae.common.SelfValidating;
-import com.gagae.youtube.domain.vo.Video.VideoId;
+import com.gagae.youtube.domain.vo.VideoId.VideoId;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 

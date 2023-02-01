@@ -1,9 +1,9 @@
 package com.gagae.youtube.application.ports.output;
 
-import com.gagae.youtube.domain.vo.Video;
-import com.gagae.youtube.domain.vo.Video.VideoId;
+import com.gagae.youtube.domain.vo.VideoId;
+import com.gagae.youtube.domain.vo.VideoId.VideoId;
 
 public interface GetVideoInfoPort {
 
-    Video retrieveVideoInfoToYoutube(VideoId videoId);
+    VideoId retrieveVideoInfoToYoutube(VideoId videoId);
 }

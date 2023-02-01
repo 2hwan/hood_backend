@@ -6,6 +6,7 @@ import com.gagae.youtube.domain.entity.Video;
 import com.gagae.youtube.domain.entity.factory.VideoFactory;
 import com.gagae.youtube.domain.vo.Platform;
 import com.gagae.youtube.domain.vo.VideoId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.annotation.ApplicationScope;
 
 import javax.inject.Inject;
@@ -13,7 +14,7 @@ import javax.inject.Inject;
 @ApplicationScope
 public class VideoManagementInputPort implements VideoManagementUseCase {
 
-    @Inject
+    @Autowired
     VideoManagementOutputPort videoManagementOutputPort;
 
     @Override

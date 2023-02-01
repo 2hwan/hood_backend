@@ -20,6 +20,11 @@ public class VideoId {
         return new VideoId(videoId);
     }
 
+    public static VideoId withoutId(){
+        //default jfla music
+        return new VideoId("MhQKe-aERsU");
+    }
+
 //    public Video(String id, VideoStatistics statistics, VideoSnippet snippet){
 //        this.id = id;
 //        this.statistics = statistics;

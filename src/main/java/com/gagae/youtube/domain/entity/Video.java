@@ -10,4 +10,6 @@ import lombok.Getter;
 public abstract class Video {
     protected VideoId id;
     protected Platform platform;
+
+    //AllArgsConstructor 로 생성자 자동생성
 }

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseResponse extends BaseObject {
+public class BaseResponse<T> extends BaseObject<T> {
     private static final long serialVersionUID = 1L;
 
     private Logger log = LoggerFactory.getLogger(BaseResponse.class);
@@ -29,14 +29,22 @@ public class BaseResponse extends BaseObject {
     protected String message = "SUCCESS";
 
     @Getter @Setter
+    @JsonProperty("data")
+    @JsonInclude(Include.NON_NULL)
+    protected T data;
+
+    public static <T> BaseResponse<T> ok(T data){
+        return new BaseResponse<>(ResCode.OK.getCode(), ResCode.OK.getMessage(), data);
+    }
+
+    public static BaseResponse<T> of(ResCode resCode, T data){
+        return new BaseResponse<>(resCode.getCode(), resCode.getMessage(), data);
+    }
+
+    @Getter @Setter
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
     private List<Map<String, String>> errors;
-
-    @Getter @Setter
-    @JsonProperty("data")
-    @JsonInclude(Include.NON_NULL)
-    protected Object data;
 
     public BaseResponse(){
     }

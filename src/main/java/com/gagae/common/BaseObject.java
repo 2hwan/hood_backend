@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.Serializable;
 
-public class BaseObject implements Serializable {
+public class BaseObject<T> implements Serializable {
 
     public String toJson() {
         try {

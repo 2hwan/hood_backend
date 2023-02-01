@@ -2,7 +2,6 @@ package com.gagae.youtube.framework.adapters.output.youtube;
 
 
 import com.gagae.common.PersistenceAdapter;
-import com.gagae.youtube.application.ports.output.GetVideoInfoPort;
 import com.gagae.youtube.domain.vo.VideoId.VideoId;
 import com.gagae.youtube.domain.vo.VideoId;
 import lombok.RequiredArgsConstructor;

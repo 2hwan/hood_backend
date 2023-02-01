@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.List;d
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseResponse<T> extends BaseObject<T> {
+public class BaseResponse extends BaseObject {
     private static final long serialVersionUID = 1L;
 
     private Logger log = LoggerFactory.getLogger(BaseResponse.class);
@@ -31,14 +31,14 @@ public class BaseResponse<T> extends BaseObject<T> {
     @Getter @Setter
     @JsonProperty("data")
     @JsonInclude(Include.NON_NULL)
-    protected T data;
+    protected Object data;
 
-    public static <T> BaseResponse<T> ok(T data){
-        return new BaseResponse<>(ResCode.OK.getCode(), ResCode.OK.getMessage(), data);
+    public static BaseResponse ok(){
+        return new BaseResponse(ResCode.OK.getCode(), ResCode.OK.getMessage());
     }
 
-    public static BaseResponse<T> of(ResCode resCode, T data){
-        return new BaseResponse<>(resCode.getCode(), resCode.getMessage(), data);
+    public static BaseResponse of(ResCode resCode){
+        return new BaseResponse(resCode.getCode(), resCode.getMessage());
     }
 
     @Getter @Setter

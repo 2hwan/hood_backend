@@ -24,7 +24,6 @@ public class VideoManagementAdapter {
             @PathVariable("videoId") VideoId videoId) {
 
         videoManagementUseCase.retrieveVideo(videoId);
-
-        return baseResponse;
+        return BaseResponse.ok();
     }
 }

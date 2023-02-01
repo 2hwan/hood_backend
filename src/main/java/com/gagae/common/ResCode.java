@@ -17,5 +17,5 @@ public enum ResCode {
     private final int code;
     private final String message;
 
-    public BaseResponse<> toResponse() {return BaseResponse.of(this, null);}
+    public BaseResponse toResponse() {return BaseResponse.of(this);}
 }

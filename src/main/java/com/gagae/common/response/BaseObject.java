@@ -1,11 +1,11 @@
-package com.gagae.common;
+package com.gagae.common.response;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.Serializable;
 
-public class BaseObject implements Serializable {
+public abstract class BaseObject<T> implements Serializable {
 
     public String toJson() {
         try {

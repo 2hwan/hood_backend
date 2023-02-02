@@ -1,6 +1,7 @@
 # hood_backend
 Spring Boot, JPA, Hexagonal Architecture
 
+#
 1. 도메인 헥사곤
 
     1-1 문제 영역 이해
@@ -29,3 +30,7 @@ Spring Boot, JPA, Hexagonal Architecture
     3-2 입력 어댑터 구현
     
     3-3 프레임워크 헥사곤 테스트
+    
+        
+# 서비스 흐름
+input Adapter -> UseCase(interface) -> input port -> output port(interface) -> output Adapter

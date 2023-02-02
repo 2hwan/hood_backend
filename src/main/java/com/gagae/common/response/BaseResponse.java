@@ -1,4 +1,4 @@
-package com.gagae.common;
+package com.gagae.common.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,14 +29,22 @@ public class BaseResponse extends BaseObject {
     protected String message = "SUCCESS";
 
     @Getter @Setter
-    @JsonProperty("error")
-    @JsonInclude(Include.NON_NULL)
-    private List<Map<String, String>> errors;
-
-    @Getter @Setter
     @JsonProperty("data")
     @JsonInclude(Include.NON_NULL)
     protected Object data;
+
+    public static BaseResponse ok(){
+        return new BaseResponse(ResCode.OK.getCode(), ResCode.OK.getMessage());
+    }
+
+    public static BaseResponse of(ResCode resCode){
+        return new BaseResponse(resCode.getCode(), resCode.getMessage());
+    }
+
+    @Getter @Setter
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private List<Map<String, String>> errors;
 
     public BaseResponse(){
     }

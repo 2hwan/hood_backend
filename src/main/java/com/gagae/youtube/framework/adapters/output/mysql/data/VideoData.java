@@ -19,4 +19,7 @@ public class VideoData implements Serializable {
 
     @Column(name="video_id", length = 11)
     private String videoId;
+
+    @Column(name="platform")
+    private String platform;
 }

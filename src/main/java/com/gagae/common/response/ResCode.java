@@ -1,5 +1,6 @@
-package com.gagae.common;
+package com.gagae.common.response;
 
+import com.gagae.common.response.BaseResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

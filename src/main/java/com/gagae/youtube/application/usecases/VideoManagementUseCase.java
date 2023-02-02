@@ -3,6 +3,7 @@ package com.gagae.youtube.application.usecases;
 import com.gagae.youtube.domain.entity.Video;
 import com.gagae.youtube.domain.vo.Platform;
 import com.gagae.youtube.domain.vo.VideoId;
+import reactor.core.publisher.Mono;
 
 public interface VideoManagementUseCase {
     // C R U D
@@ -13,4 +14,6 @@ public interface VideoManagementUseCase {
     );
 
     Video retrieveVideo(VideoId id);
+
+    Mono<String> retrieveVideoToYoutube(VideoId id);
 }

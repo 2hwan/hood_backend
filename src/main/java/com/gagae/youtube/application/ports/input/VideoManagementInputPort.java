@@ -1,5 +1,6 @@
 package com.gagae.youtube.application.ports.input;
 
+import com.gagae.common.UseCase;
 import com.gagae.youtube.application.ports.output.VideoManagementMySQLOutputPort;
 import com.gagae.youtube.application.ports.output.VideoManagementYoutubeOutputPort;
 import com.gagae.youtube.application.usecases.VideoManagementUseCase;
@@ -7,18 +8,18 @@ import com.gagae.youtube.domain.entity.Video;
 import com.gagae.youtube.domain.entity.factory.VideoFactory;
 import com.gagae.youtube.domain.vo.Platform;
 import com.gagae.youtube.domain.vo.VideoId;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.annotation.ApplicationScope;
 import reactor.core.publisher.Mono;
 
-@ApplicationScope
+@UseCase
+@RequiredArgsConstructor
 public class VideoManagementInputPort implements VideoManagementUseCase {
 
-    @Autowired
-    VideoManagementMySQLOutputPort videoManagementMySQLOutputPort;
+    private final VideoManagementMySQLOutputPort videoManagementMySQLOutputPort;
 
-    @Autowired
-    VideoManagementYoutubeOutputPort videoManagementYoutubeOutputPort;
+    private final VideoManagementYoutubeOutputPort videoManagementYoutubeOutputPort;
 
     @Override
     public Video createVideo(VideoId videoId, Platform platform) {
@@ -31,7 +32,7 @@ public class VideoManagementInputPort implements VideoManagementUseCase {
     }
 
     @Override
-    public Mono<String> retrieveVideoToYoutube(VideoId id) {
+    public Mono<String> retrieveVideoToYoutube(String id) {
         return videoManagementYoutubeOutputPort.retrieveVideoToYoutube(id);
     }
 }

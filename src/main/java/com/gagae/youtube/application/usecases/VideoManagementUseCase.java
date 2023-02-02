@@ -15,5 +15,5 @@ public interface VideoManagementUseCase {
 
     Video retrieveVideo(VideoId id);
 
-    Mono<String> retrieveVideoToYoutube(VideoId id);
+    Mono<String> retrieveVideoToYoutube(String id);
 }

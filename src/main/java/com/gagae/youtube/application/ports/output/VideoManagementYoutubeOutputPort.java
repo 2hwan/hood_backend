@@ -6,5 +6,5 @@ import reactor.core.publisher.Mono;
 
 public interface VideoManagementYoutubeOutputPort {
 
-    Mono<String> retrieveVideoToYoutube(VideoId id);
+    Mono<String> retrieveVideoToYoutube(String id);
 }

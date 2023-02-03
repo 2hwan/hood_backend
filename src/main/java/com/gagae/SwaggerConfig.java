@@ -1,5 +1,7 @@
 package com.gagae;
 
+import com.fasterxml.classmate.TypeResolver;
+import com.gagae.youtube.framework.adapters.output.youtube.mono.YoutubeVideoMono;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -15,16 +17,21 @@ import java.util.Set;
 @Configuration
 public class SwaggerConfig {
 
+    //http://localhost:8080/swagger-ui/index.html#/ 접속
+
     private ApiInfo swaggerInfo() {
         return new ApiInfoBuilder().title("Hood API")
                 .description("Hood API Docs").build();
     }
 
     @Bean
-    public Docket swaggerApi() {
+    public Docket swaggerApi(TypeResolver typeResolver) {
         return new Docket(DocumentationType.SWAGGER_2)
                 .consumes(getConsumeContentTypes())
                 .produces(getProduceContentTypes())
+                .additionalModels(
+                        typeResolver.resolve(YoutubeVideoMono.class)
+                )
                 .apiInfo(swaggerInfo()).select()
                 .apis(RequestHandlerSelectors.basePackage("com.gagae.youtube.framework.adapters.input.rest"))
                 .paths(PathSelectors.any())

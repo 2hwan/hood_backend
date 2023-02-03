@@ -1,10 +1,9 @@
 package com.gagae.youtube.application.ports.output;
 
-import com.gagae.youtube.domain.entity.Video;
-import com.gagae.youtube.domain.vo.VideoId;
+import com.gagae.youtube.framework.adapters.output.youtube.mono.YoutubeVideoMono;
 import reactor.core.publisher.Mono;
 
 public interface VideoManagementYoutubeOutputPort {
 
-    Mono<String> retrieveVideoToYoutube(String id);
+    Mono<YoutubeVideoMono> retrieveVideoToYoutube(String id);
 }

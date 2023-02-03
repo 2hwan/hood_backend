@@ -8,7 +8,7 @@ import com.gagae.youtube.framework.adapters.output.mysql.data.VideoData;
 import org.springframework.stereotype.Component;
 
 @Component
-public class VideoMapper {
+public class VideoDataMapper {
 
     public static Video videoDataToDomain(VideoData videoData){
         Video video = VideoFactory.getVideo(

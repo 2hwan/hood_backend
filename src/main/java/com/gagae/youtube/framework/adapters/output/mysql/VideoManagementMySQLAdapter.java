@@ -1,12 +1,11 @@
 package com.gagae.youtube.framework.adapters.output.mysql;
 
 import com.gagae.common.Adapter;
-import com.gagae.common.UseCase;
 import com.gagae.youtube.application.ports.output.VideoManagementMySQLOutputPort;
 import com.gagae.youtube.domain.entity.Video;
 import com.gagae.youtube.domain.vo.VideoId;
 import com.gagae.youtube.framework.adapters.output.mysql.data.VideoData;
-import com.gagae.youtube.framework.adapters.output.mysql.mappers.VideoMapper;
+import com.gagae.youtube.framework.adapters.output.mysql.mappers.VideoDataMapper;
 import com.gagae.youtube.framework.adapters.output.mysql.repository.VideoManagementRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +20,6 @@ public class VideoManagementMySQLAdapter implements VideoManagementMySQLOutputPo
     public Video retrieveVideo(VideoId id) {
 
         VideoData videoData = videoManagementRepository.findByVideoId(id.getVideoId());
-        return VideoMapper.videoDataToDomain(videoData);
+        return VideoDataMapper.videoDataToDomain(videoData);
     }
 }

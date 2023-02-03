@@ -2,13 +2,10 @@ package com.gagae.youtube.framework.adapters.output.youtube;
 
 
 import com.gagae.common.Adapter;
-import com.gagae.youtube.application.ports.output.VideoManagementMySQLOutputPort;
 import com.gagae.youtube.application.ports.output.VideoManagementYoutubeOutputPort;
-import com.gagae.youtube.domain.entity.Video;
-import com.gagae.youtube.domain.vo.VideoId;
-import com.gagae.youtube.framework.adapters.output.youtube.mono.YoutubeVideoModel;
+import com.gagae.youtube.domain.entity.YoutubeVideo;
+import com.gagae.youtube.framework.adapters.output.youtube.mono.YoutubeVideoMono;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -20,23 +17,27 @@ public class VideoManagementYoutubeAdapter implements VideoManagementYoutubeOutp
     private final WebClient webClient;
 
     @Override
-    public Mono<String> retrieveVideoToYoutube(String id) {
+    public Mono<YoutubeVideoMono> retrieveVideoToYoutube(String id) {
         // https://www.googleapis.com/youtube/v3/videos?id=6pog30mW9Kk&key=[Goolge API Key]&fields=items(id,snippet(publishedAt,channelId,title,description,channelTitle),statistics)&part=snippet,statistics,status
-        Mono<String> ms = webClient.mutate()
+        Mono<YoutubeVideoMono> ms = webClient.mutate()
                 .baseUrl("https://www.googleapis.com")
                 .build()
                 .get()
                 .uri(uriBuilder -> uriBuilder
                         .path("youtube/v3/videos")
                         .queryParam("id", id)
-                        .queryParam("key", "")
+                        .queryParam("key", "AIzaSyD9SCXzMB_Bk2gXwLkuP75T0r-EqxaY2-k")
                         .queryParam("fields","items(id,snippet(publishedAt,channelId,title,description,channelTitle),statistics)")
-                        .queryParam("parts", "snippet,statisti" +
-                                "cs,status")
+                        .queryParam("part", "snippet,statistics,status")
                         .build())
                 .retrieve()
-                .bodyToMono(String.class);
-        System.out.println(ms);
+                .bodyToMono(YoutubeVideoMono.class);
+
+
+        // TODO Mono To Domain 매핑작업 필요
+//        YoutubeVideoMono useBlock = ms.block();
+//        String id = useBlock.getItems();
+
         return ms;
     }
 }

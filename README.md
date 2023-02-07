@@ -1,10 +1,11 @@
 # hood_backend
-Spring Boot, JPA, Hexagonal Architecture
+Spring Boot, JPA, WebFlux, Hexagonal Architecture
 
 #
 1. 도메인 헥사곤
 
     1-1 문제 영역 이해
+    
     
     1-2 VO 객체 정의
     

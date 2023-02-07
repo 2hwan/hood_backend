@@ -16,4 +16,8 @@ public class VideoService {
                 .filter(videoPredicate)
                 .collect(Collectors.<Video>toList());
     }
+
+    public static Video findById(Map<VideoId, Video> videos, VideoId id){
+        return videos.get(id);
+    }
 }
